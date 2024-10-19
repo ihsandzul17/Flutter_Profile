@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'LoginPage.dart';
 
 class Page2 extends StatelessWidget {
   const Page2({Key? key}) : super(key: key);
@@ -15,7 +16,20 @@ class Page2 extends StatelessWidget {
         ),
         title: Text('Profile'),
         backgroundColor: Colors.orange[200],
-      ),
+    actions: [
+    // Tambahkan tombol Logout di AppBar
+    IconButton(
+    icon: Icon(Icons.logout),
+    onPressed: () {
+      // Navigasi ke halaman login dan gantikan halaman ini
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => LoginPage()),
+      );
+    },
+    ),
+    ],
+    ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -24,7 +38,7 @@ class Page2 extends StatelessWidget {
             Center(
               child: CircleAvatar(
                 radius: 50,
-                backgroundImage: AssetImage('images/ihsan.JPG'),
+                backgroundImage: AssetImage('images/halal.jpg'),
               ),
             ),
             SizedBox(height: 16),
